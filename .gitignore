@@ -1,0 +1,13 @@
+.git/
+_ReSharper.Transit/
+Analysis/bin/
+Analysis/obj
+Common/bin/
+Common/obj/
+Importer/bin/
+Importer/obj/
+Inspector/bin/
+Inspector/obj/
+Reader/bin/
+Reader/obj/
+Transit.suo

@@ -32,13 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GMap.NET.Core">
-      <HintPath>..\..\..\..\Libraries\gmap.net\GMap.NET.Core.dll</HintPath>
+      <HintPath>..\Library\gmap.net\GMap.NET.Core.dll</HintPath>
     </Reference>
     <Reference Include="GMap.NET.WindowsForms">
-      <HintPath>..\..\..\..\Libraries\gmap.net\GMap.NET.WindowsForms.dll</HintPath>
+      <HintPath>..\Library\gmap.net\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>..\..\..\..\Libraries\protobuf-net\Full\net30\protobuf-net.dll</HintPath>
+      <HintPath>..\Library\protobuf-net\Full\net30\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
