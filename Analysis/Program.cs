@@ -14,12 +14,15 @@ namespace Transit.Analysis
             Console.Title = "Transit Analysis";
             Console.WriteLine("Analyzing all gps captures...");
             Matcher matcher = new Matcher();
-            List<Match> matches = matcher.Match(new List<IReader> { new DatabaseReader() }).ToList();
+            DatabaseReader reader = new DatabaseReader();
+            List<Match> matches = matcher.Match(new List<IReader> { reader }).ToList();
+            ResultSet resultSet = new ResultSet(matches, reader.Shapes.ToDictionary(x => x.Id));
 
-            Stream writer = File.OpenWrite("matches.transit");
-
-            Serializer.Serialize(writer, matches);
-            Serializer.FlushPool();
+            using (Stream writer = File.OpenWrite("matches.transit"))
+            {
+                Serializer.Serialize(writer, resultSet);
+                Serializer.FlushPool();
+            }
 
             Console.WriteLine("done");
         }

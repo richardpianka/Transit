@@ -75,7 +75,7 @@ namespace Transit.Analysis
                         readsPerStop[readingStop] = matchReads.OrderBy(x => x.Read.Date).ToList();
                         searchIndex = Int32.MaxValue;
 
-                        yield return new Match(capture.Device, shape, readsPerStop);
+                        yield return new Match(capture.Device, shape.Id, readsPerStop);
                     }
                 }
             }

@@ -239,7 +239,7 @@
             this.captureGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.captureGrid.Size = new System.Drawing.Size(872, 277);
             this.captureGrid.TabIndex = 0;
-            this.captureGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.captureGrid_CellMouseDown);
+            this.captureGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaptureGridCellMouseDown);
             this.captureGrid.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaptureGridCellMouseUp);
             this.captureGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.CaptureGridCellValueChanged);
             this.captureGrid.SelectionChanged += new System.EventHandler(this.CaptureGridSelectionChanged);

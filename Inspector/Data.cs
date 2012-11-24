@@ -2,19 +2,30 @@
 using System.IO;
 using ProtoBuf;
 using Transit.Analysis;
+using Transit.Common.Model;
 
 namespace Transit.Inspector
 {
     internal static class Data
     {
-        public static IEnumerable<Match> LoadMatches(string file)
+        private static ResultSet _results;
+
+        public static void Load(string file)
         {
             using (Stream reader = File.OpenRead(file))
             {
-                List<Match> matches = Serializer.Deserialize<List<Match>>(reader);
-                //Serializer.Serialize(File.OpenWrite(@"c:\output.transit"), matches);
-                return matches;
+                _results = Serializer.Deserialize<ResultSet>(reader);
             }
+        }
+
+        public static IEnumerable<Match> Matches
+        {
+            get { return _results.Matches; }
+        }
+
+        public static Dictionary<string, Shape> Shapes
+        {
+            get { return _results.Shapes; }
         }
     }
 }

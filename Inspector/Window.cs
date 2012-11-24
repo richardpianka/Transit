@@ -34,6 +34,7 @@ namespace Transit.Inspector
 
         private string MatchToKey(Match match)
         {
+            match.Initialize(Data.Shapes[match.ShapeId]);
             return string.Join("|", match.Device, match.Shape.Id, match.StartTime.ToString("MM/dd/yyyy HH:mm:ss"));
         }
 
@@ -71,7 +72,8 @@ namespace Transit.Inspector
 
         private void InitializeAll(string file)
         {
-            _matches = Data.LoadMatches(file).ToList();
+            Data.Load(file);
+            _matches = Data.Matches.ToList();
             _matchMap = _matches.ToDictionary(MatchToKey);
             _matchCollection = new MatchCollection(_matches);
             RenderMatches();
@@ -276,9 +278,12 @@ namespace Transit.Inspector
 
             File.Delete(saveFileDialog.FileName);
 
+            ResultSet resultSet = new ResultSet(_matchCollection.IncludedMatches.ToList(), Data.Shapes);
+
             using (Stream writer = File.OpenWrite(saveFileDialog.FileName))
             {
-                Serializer.Serialize(writer, _matchCollection.IncludedMatches.ToList());
+                Serializer.Serialize(writer, resultSet);
+                Serializer.FlushPool();
             }
         }
 
@@ -300,7 +305,7 @@ namespace Transit.Inspector
             map.Zoom = zoomBar.Value;
         }
 
-        private void captureGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        private void CaptureGridCellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 0 && captureGrid.SelectedRows.OfType<DataGridViewRow>().Any(x => x.Index == e.RowIndex))
             {
