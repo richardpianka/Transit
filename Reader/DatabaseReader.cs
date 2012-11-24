@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data;
-using Transit.Common;
 using Transit.Common.Model;
 
 namespace Transit.Reader
@@ -11,11 +10,6 @@ namespace Transit.Reader
     public sealed class DatabaseReader : IReader
     {
         private readonly IEnumerable<Route> _routes;
-
-        public DatabaseReader()
-        {
-            _routes = GetRoutes();
-        }
 
         public IEnumerable<Route> Routes
         {
@@ -32,6 +26,11 @@ namespace Transit.Reader
             get { return Shapes.SelectMany(x => x.Trips.SelectMany(y => y.Stops)).Distinct(); }
         }
 
+        public int CaptureCount
+        {
+            get { return GetDateDevicePairs().Count; }
+        }
+
         public IEnumerable<Capture> Captures
         {
             get
@@ -40,6 +39,28 @@ namespace Transit.Reader
                                            .WithDegreeOfParallelism(1) //TODO: parallelize this correctly
                                            .Select(pair => new Capture(pair.Item2, pair.Item1, GetPoints(pair.Item2, pair.Item1, pair.Item1.AddDays(1))));
             }
+        }
+
+        public DatabaseReader()
+        {
+            _routes = GetRoutes();
+            _dateDevicePairs = new Lazy<List<Tuple<DateTime, string>>>(() =>
+                                                                           {
+                                                                               List<Tuple<DateTime, string>> pairs = new List<Tuple<DateTime, string>>();
+
+                                                                               const string query = "SELECT DISTINCT DATEADD(dd, DATEDIFF(dd, 0, Date), 0) AS [Date], DeviceName FROM Gps ORDER BY DATEADD(dd, DATEDIFF(dd, 0, Date), 0)";
+                                                                               DataTable dateTable = Database.SelectQuery(query);
+
+                                                                               foreach (DataRow row in dateTable.Rows)
+                                                                               {
+                                                                                   string date = Convert.ToString(row["Date"]);
+                                                                                   string device = Convert.ToString(row["DeviceName"]);
+
+                                                                                   pairs.Add(new Tuple<DateTime, string>(DateTime.Parse(date), device));
+                                                                               }
+
+                                                                               return pairs;
+                                                                           });
         }
 
         private static IEnumerable<Route> GetRoutes()
@@ -128,22 +149,10 @@ namespace Transit.Reader
 //
 //        private const string TimeFormat = "MM/dd/yy H:mm:ss";
 
+        private Lazy<List<Tuple<DateTime, string>>> _dateDevicePairs;
         public List<Tuple<DateTime, string>> GetDateDevicePairs()
         {
-            List<Tuple<DateTime, string>> pairs = new List<Tuple<DateTime, string>>();
-
-            string query = "SELECT DISTINCT DATEADD(dd, DATEDIFF(dd, 0, Date), 0) AS [Date], DeviceName FROM Gps ORDER BY DATEADD(dd, DATEDIFF(dd, 0, Date), 0)";
-            DataTable dateTable = Database.SelectQuery(query);
-
-            foreach (DataRow row in dateTable.Rows)
-            {
-                string date = Convert.ToString(row["Date"]);
-                string device = Convert.ToString(row["DeviceName"]);
-
-                pairs.Add(new Tuple<DateTime, string>(DateTime.Parse(date), device));
-            }
-
-            return pairs;
+            return _dateDevicePairs.Value;
         }
 
         public List<GpsRead> GetPoints(string device, DateTime start, DateTime end)

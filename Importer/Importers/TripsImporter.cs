@@ -9,6 +9,11 @@ namespace Transit.Importer.Importers
                                                                                "TripId",
                                                                                "ShapeId", };
 
+        public int Total
+        {
+            get { return 1; }
+        }
+
         public void Import(DirectoryInfo workingDirectory)
         {
             CsvImporter.Ingest(workingDirectory, "trips.txt", "dbo.Trips", _columnNames);

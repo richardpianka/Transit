@@ -17,8 +17,6 @@ namespace Transit.Importer
                 string lowerCase = noUnderScores.ToLower();
                 string titleCase = textInfo.ToTitleCase(lowerCase);
                 columnClean = titleCase.Replace(" ", "");
-                //columnClean = textInfo.ToTitleCase(column.Replace("_", " ").ToLower()).Replace(" ", "");
-                //columnClean = textInfo.ToTitleCase(column.ToLower()).Replace(" ", "");
             }
             else if (column.ToLower().Equals(column))
             {

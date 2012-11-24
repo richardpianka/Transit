@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using log4net;
 using Transit.Common.Model;
 using Transit.Reader;
 
@@ -8,19 +9,29 @@ namespace Transit.Analysis
 {
     public sealed class Matcher
     {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public IEnumerable<Match> Match(IEnumerable<IReader> readers)
         {
+            long time = Environment.TickCount;
+
             List<Match> allMatches = new List<Match>();
             List<Shape> shapes = readers.SelectMany(x => x.Shapes).ToList();
 
             foreach (IReader reader in readers)
             {
+                int progress = 0;
+
                 foreach (Capture capture in reader.Captures)
                 {
+                    progress++;
+                    string captureLabel = string.Format("{0} {1}", capture.Device, capture.Date.ToString("yyyy-MM-dd"));
+
                     List<Match> matches = MatchCapture(shapes, capture).ToList();
                     allMatches.AddRange(matches);
 
-                    Console.WriteLine("{0} {1} {2} matches", capture.Device, capture.Date.ToString("yyyy-MM-dd"), matches.Count);
+                    Display.Render(captureLabel, progress, reader.CaptureCount, Environment.TickCount - time);
+                    Log.InfoFormat("{0} matches", captureLabel);
                 }
             }
 

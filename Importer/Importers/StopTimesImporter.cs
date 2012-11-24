@@ -9,6 +9,11 @@ namespace Transit.Importer.Importers
                                                                                "StopId",
                                                                                "StopSequence",
                                                                                "Timepoint", };
+
+        public int Total
+        {
+            get { return 1; }
+        }
         
         public void Import(DirectoryInfo workingDirectory)
         {

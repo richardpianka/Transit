@@ -4,6 +4,8 @@ namespace Transit.Importer
 {
     public interface IImporter
     {
+        int Total { get; }
+
         void Import(DirectoryInfo workingPath);
     }
 }

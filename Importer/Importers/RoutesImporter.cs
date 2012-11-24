@@ -14,6 +14,11 @@ namespace Transit.Importer.Importers
                                                                         "RouteLongName",
                                                                         "RouteDesc", };
 
+        public int Total
+        {
+            get { return 1; }
+        }
+
         public void Import(DirectoryInfo workingDirectory)
         {
             CsvImporter.Ingest(workingDirectory, "routes.txt", "dbo.Routes", _columnNames);

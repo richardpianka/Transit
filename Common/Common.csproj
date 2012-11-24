@@ -65,6 +65,7 @@
     <Compile Include="Model\Stop.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Model\Trip.cs" />
+    <Compile Include="Utilities\FormatUtilities.cs" />
     <Compile Include="Utilities\MapUtilities.cs" />
     <Compile Include="Utilities\SerializableDictionary.cs" />
   </ItemGroup>

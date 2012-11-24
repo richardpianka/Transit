@@ -10,6 +10,11 @@ namespace Transit.Importer.Importers
                                                                         "StopLat",
                                                                         "StopLon", };
 
+        public int Total
+        {
+            get { return 1; }
+        }
+
         public void Import(DirectoryInfo workingDirectory)
         {
             CsvImporter.Ingest(workingDirectory, "stops.txt", "dbo.Stops", _columnNames);

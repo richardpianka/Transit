@@ -10,6 +10,7 @@ namespace Transit.Reader
         IEnumerable<Shape> Shapes { get; }
         IEnumerable<Stop> Stops { get; }
 
+        int CaptureCount { get; }
         IEnumerable<Capture> Captures { get; }
     }
 }

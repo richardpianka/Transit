@@ -10,6 +10,11 @@ namespace Transit.Importer.Importers
                                                                         "ShapePtLon",
                                                                         "ShapePtSequence", };
 
+        public int Total
+        {
+            get { return 1; }
+        }
+
         public void Import(DirectoryInfo workingDirectory)
         {
             CsvImporter.Ingest(workingDirectory, "shapes.txt", "dbo.Shapes", _columnNames);
