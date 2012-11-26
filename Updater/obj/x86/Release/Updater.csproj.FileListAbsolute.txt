@@ -1,0 +1,6 @@
+C:\Development\Transit\2.0\Updater\bin\Release\Updater.exe
+C:\Development\Transit\2.0\Updater\bin\Release\Updater.pdb
+C:\Development\Transit\2.0\Updater\obj\x86\Release\Updater.exe
+C:\Development\Transit\2.0\Updater\obj\x86\Release\Updater.pdb
+C:\Development\Transit\2.0\Updater\obj\x86\Release\Updater.csprojResolveAssemblyReference.cache
+C:\Development\Transit\2.0\Updater\bin\Release\Updater.exe.config

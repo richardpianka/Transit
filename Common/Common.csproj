@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>transit.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GMap.NET.Core">
       <HintPath>..\Library\gmap.net\GMap.NET.Core.dll</HintPath>
@@ -69,6 +72,9 @@
     <Compile Include="Utilities\FormatUtilities.cs" />
     <Compile Include="Utilities\MapUtilities.cs" />
     <Compile Include="Utilities\SerializableDictionary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="transit.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
