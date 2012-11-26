@@ -26,7 +26,7 @@
       <DatabaseFiles Include="Database\**\*.*" />
     </ItemGroup>
 
-    <Zip Files="@(GovernorFiles)" WorkingDirectory="Governor\bin\Release" ZipFileName="Artifacts\transit-$(build_number).$(GitCommitShortHash).zip" ZipLevel="9" />
-    <Zip Files="@(DatabaseFiles)" WorkingDirectory="Database" ZipFileName="Artifacts\transit-database-$(build_number).$(GitCommitShortHash).zip" ZipLevel="9" />
+    <Zip Files="@(GovernorFiles)" WorkingDirectory="Governor\bin\Release" ZipFileName="Artifacts\transit-$(build_number).zip" ZipLevel="9" />
+    <Zip Files="@(DatabaseFiles)" WorkingDirectory="Database" ZipFileName="Artifacts\transit-database-$(build_number).zip" ZipLevel="9" />
   </Target>
 </Project>
