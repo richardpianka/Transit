@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
 
   <PropertyGroup>
-    <DevEnv>H:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe</DevEnv>
+    <DevEnv>\\HYDROGEN\C\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe</DevEnv>
   </PropertyGroup>
   
   <Target Name="Build" DependsOnTargets="Clean; Initialize; Compile; Package">
