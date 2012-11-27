@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_049E18CBC72D4963AE60E0B64928D53E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_066BC7DFCD65CED98FCCFEC9F9AFE4D3"
         "OwnerKey" = "8:_1CCB927671A34310B30FC99A7C954F56"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,6 +35,12 @@
         {
         "MsmKey" = "8:_4F24E768E626D022449779E85D398C2A"
         "OwnerKey" = "8:_1CCB927671A34310B30FC99A7C954F56"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_576C03621D83451ABE0188393B60F4B0"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -319,6 +331,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_049E18CBC72D4963AE60E0B64928D53E"
+            {
+            "SourcePath" = "8:..\\Resources\\Images\\uninstall.ico"
+            "TargetName" = "8:uninstall.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_8EEAB52FC5A84A199CEDAF4FBFC338D0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_066BC7DFCD65CED98FCCFEC9F9AFE4D3"
             {
             "AssemblyRegister" = "3:1"
@@ -379,6 +411,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_576C03621D83451ABE0188393B60F4B0"
+            {
+            "SourcePath" = "8:C:\\Windows\\System32\\msiexec.exe"
+            "TargetName" = "8:msiexec.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_38F1D3DE4BB24D90A690C8A1162C82CE"
+            "Condition" = "8:Not Installed"
+            "Transitive" = "11:TRUE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:TRUE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_58DFEBE65767C6685E807C41419F7745"
@@ -624,6 +676,17 @@
         }
         "Folder"
         {
+            "{1525181F-901A-416C-8A58-119130FE478E}:_38F1D3DE4BB24D90A690C8A1162C82CE"
+            {
+            "Name" = "8:#1914"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:SystemFolder"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_502C56D32B8548209220984A2202A7A3"
             {
             "Name" = "8:#1919"
@@ -675,7 +738,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Transit"
         "ProductCode" = "8:{E3F8DDAE-66B5-4FFF-86E8-5C5DD5282F4B}"
-        "PackageCode" = "8:{0966A813-ABEF-4B58-82D6-D8DD81D41D88}"
+        "PackageCode" = "8:{E7094E5C-BBAF-4B6D-832F-E3F1582BF4BD}"
         "UpgradeCode" = "8:{49497E2E-7015-4799-8AB3-3A7E7E3FC1DA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -795,6 +858,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_47D8C281CAC34B5CA8FDA2BEB4BFF5E8"
+            {
+            "Name" = "8:Uninstall"
+            "Arguments" = "8:/x [ProductCode]"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_576C03621D83451ABE0188393B60F4B0"
+            "Folder" = "8:_502C56D32B8548209220984A2202A7A3"
+            "WorkingFolder" = "8:_38F1D3DE4BB24D90A690C8A1162C82CE"
+            "Icon" = "8:_049E18CBC72D4963AE60E0B64928D53E"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CDCDA96F380E44CEBBA562280EA674E4"
             {
             "Name" = "8:Transit"
