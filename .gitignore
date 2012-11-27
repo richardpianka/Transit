@@ -2,6 +2,8 @@
 _ReSharper.Transit/
 Analysis/bin/
 Analysis/obj
+Governor/bin/
+Governor/obj/
 Artifacts/
 Build/
 Common/bin/
@@ -12,5 +14,7 @@ Inspector/bin/
 Inspector/obj/
 Reader/bin/
 Reader/obj/
+Setup/Debug/
+Setup/Release/
 Transit.suo
 Transit.5.1.ReSharper.user
