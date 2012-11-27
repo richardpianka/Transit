@@ -1,5 +1,0 @@
-C:\Development\Transit\2.0\Updater\bin\Debug\Updater.exe
-C:\Development\Transit\2.0\Updater\bin\Debug\Updater.pdb
-C:\Development\Transit\2.0\Updater\obj\x86\Debug\Updater.exe
-C:\Development\Transit\2.0\Updater\obj\x86\Debug\Updater.pdb
-C:\Development\Transit\2.0\Updater\bin\Debug\Updater.exe.config
