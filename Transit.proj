@@ -30,7 +30,6 @@
       <DatabaseFiles Include="Database\**\*.*" />
     </ItemGroup>
 
-    <Zip Files="@(GovernorFiles)" WorkingDirectory="Governor\bin\Release" ZipFileName="Artifacts\transit-$(build_number).zip" ZipLevel="9" />
     <Zip Files="@(DatabaseFiles)" WorkingDirectory="Database" ZipFileName="Artifacts\transit-database-$(build_number).zip" ZipLevel="9" />
 
     <Exec Command="&quot;$(DevEnv)&quot; &quot;Transit.sln&quot; /Rebuild &quot;Release&quot; /Project &quot;$(MSBuildProjectDirectory)\Setup\Setup.vdproj&quot; /ProjectConfig &quot;Release&quot; /Out &quot;errors.txt&quot; /Log"
