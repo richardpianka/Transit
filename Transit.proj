@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
 
   <PropertyGroup>
-    <DevEnv>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe</DevEnv>
+    <DevEnv>H:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe</DevEnv>
   </PropertyGroup>
   
   <Target Name="Build" DependsOnTargets="Clean; Initialize; Compile; Package">
@@ -35,5 +35,7 @@
 
     <Exec Command="&quot;$(DevEnv)&quot; &quot;Transit.sln&quot; /Rebuild &quot;Release&quot; /Project &quot;$(MSBuildProjectDirectory)\Setup\Setup.vdproj&quot; /ProjectConfig &quot;Release&quot; /Out &quot;errors.txt&quot; /Log"
           ContinueOnError="false" IgnoreExitCode="false" WorkingDirectory="." />
+
+    <Copy SourceFiles="Setup/Release/Transit.msi" DestinationFiles="Artifacts/transit-$(build_number).msi" />
   </Target>
 </Project>
