@@ -696,6 +696,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5F720498DC664A5EAD196D902DCC7ACC"
+                    {
+                    "Name" = "8:Transit"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_EC7FCA60A146437E8384E6ECE61AB27D"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_59830726AD104C93A9517D31C0023291"
@@ -738,7 +749,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Transit"
         "ProductCode" = "8:{E3F8DDAE-66B5-4FFF-86E8-5C5DD5282F4B}"
-        "PackageCode" = "8:{E7094E5C-BBAF-4B6D-832F-E3F1582BF4BD}"
+        "PackageCode" = "8:{E1405A6D-EFA9-4D9A-AA93-9046D7F66260}"
         "UpgradeCode" = "8:{49497E2E-7015-4799-8AB3-3A7E7E3FC1DA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -867,7 +878,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_576C03621D83451ABE0188393B60F4B0"
-            "Folder" = "8:_502C56D32B8548209220984A2202A7A3"
+            "Folder" = "8:_5F720498DC664A5EAD196D902DCC7ACC"
             "WorkingFolder" = "8:_38F1D3DE4BB24D90A690C8A1162C82CE"
             "Icon" = "8:_049E18CBC72D4963AE60E0B64928D53E"
             "Feature" = "8:"
@@ -881,7 +892,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_1CCB927671A34310B30FC99A7C954F56"
-            "Folder" = "8:_502C56D32B8548209220984A2202A7A3"
+            "Folder" = "8:_5F720498DC664A5EAD196D902DCC7ACC"
             "WorkingFolder" = "8:_8EEAB52FC5A84A199CEDAF4FBFC338D0"
             "Icon" = "8:_A92A9BC80D0B4E9DB1C696C3C807A961"
             "Feature" = "8:"
