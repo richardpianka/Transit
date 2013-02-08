@@ -14,6 +14,8 @@ Inspector/bin/
 Inspector/obj/
 Reader/bin/
 Reader/obj/
+Reporting/bin/
+Reporting/obj/
 Setup/Debug/
 Setup/Release/
 Transit.suo

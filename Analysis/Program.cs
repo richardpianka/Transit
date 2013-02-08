@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using log4net;
 using ProtoBuf;
+using Transit.Common.Model;
 using Transit.Reader;
 
 namespace Transit.Analysis
