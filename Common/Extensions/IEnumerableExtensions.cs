@@ -12,5 +12,24 @@ namespace Transit.Common.Extensions
                 action(item);
             }
         }
+
+        public static IEnumerable<T> WithoutLast<T>(this IEnumerable<T> xs)
+        {
+            T lastX = default(T);
+            bool first = true;
+
+            foreach (T x in xs)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    yield return lastX;
+                }
+                lastX = x;
+            }
+        }
     }
 }

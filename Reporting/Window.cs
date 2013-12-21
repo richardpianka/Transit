@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using ProtoBuf;
+using Transit.Reporting.TimeBlocks;
 using ZedGraph;
 
 namespace Reporting
@@ -14,23 +15,26 @@ namespace Reporting
 
         public Window()
         {
-            Serializer.Deserialize<>()
+            TimeBlocks timeBlocks = new TimeBlocks();
+            timeBlocks.Build();
 
-
-
-
-
-
-
-            InitializeComponent();
-
-            int value = 10;
-
-            for (int i = 4; i <= 24; i++)
-            {
-                points[new XDate(2000, 0, 0, i, 15, 30)] = Convert.ToInt32(Math.Sin(i * 2 * Math.PI / 60.0) * 100);
-                points[new XDate(2000, 0, 0, i, 45, 30)] = Convert.ToInt32(Math.Sin((i * 2 + 1) * Math.PI / 60.0) * 100);
-            }
+//            Serializer.Deserialize<>()
+//
+//
+//
+//
+//
+//
+//
+//            InitializeComponent();
+//
+//            int value = 10;
+//
+//            for (int i = 4; i <= 24; i++)
+//            {
+//                points[new XDate(2000, 0, 0, i, 15, 30)] = Convert.ToInt32(Math.Sin(i * 2 * Math.PI / 60.0) * 100);
+//                points[new XDate(2000, 0, 0, i, 45, 30)] = Convert.ToInt32(Math.Sin((i * 2 + 1) * Math.PI / 60.0) * 100);
+//            }
         }
 
         private void Window_Load(object sender, EventArgs e)

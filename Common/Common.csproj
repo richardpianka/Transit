@@ -56,11 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\IDictionaryExtensions.cs" />
+    <Compile Include="Extensions\IntExtensions.cs" />
     <Compile Include="Model\Capture.cs" />
     <Compile Include="Extensions\DataTableExtensions.cs" />
     <Compile Include="Extensions\DoubleExtensions.cs" />
     <Compile Include="Model\GpsRead.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Model\Match.cs" />
+    <Compile Include="Model\MatchRead.cs" />
     <Compile Include="Model\OrderedStop.cs" />
     <Compile Include="Model\Point.cs" />
     <Compile Include="Model\ResultSet.cs" />

@@ -11,5 +11,10 @@
         {
             return value.Length == 0 ? defaultValue : value;
         }
+
+        public static string Format(this string value, params object[] args)
+        {
+            return string.Format(value, args);
+        }
     }
 }

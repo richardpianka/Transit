@@ -4,7 +4,7 @@ using ProtoBuf;
 using Transit.Analysis;
 using Transit.Common.Model;
 
-namespace Transit.Inspector
+namespace Reporting
 {
     internal static class Data
     {
@@ -16,6 +16,8 @@ namespace Transit.Inspector
             {
                 _results = Serializer.Deserialize<ResultSet>(reader);
             }
+
+            _results.Matches.ForEach(x => x.Initialize(_results.Shapes[x.ShapeId]));
         }
 
         public static IEnumerable<Match> Matches
